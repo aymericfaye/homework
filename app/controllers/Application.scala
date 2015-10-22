@@ -9,11 +9,11 @@ class Application @Inject()(ws: WSClient) extends Controller {
 
   val title = "Zengularity Homework"
 
-  def index = Action {
-    Ok(views.html.index(title))
+  def index(search: String) = Action {
+    Ok(views.html.index(title, search))
   }
 
   def stats(repo: String) = Action { // FIXME: Create the 'stats' page.
-    Ok(views.html.index(title))
+    Ok(views.html.stats(title))
   }
 }

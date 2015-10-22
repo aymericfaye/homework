@@ -1,3 +1,18 @@
-@(title: String)
+@(title: String, search: String)
 
-@main(title) { @search() }
+@layout(title) {
+    <form id="search-container" data-ng-submit="submit()" data-ng-controller="SearchController" data-ng-init="init('@search')">
+        <input id="search" data-ng-model="text" name="text" autofocus/>
+        <input id="submit" type="submit" value="Search"/>
+        <br/>
+        <div id="search-description" data-ng-if="search_input && results">Search results for <b>{{ search_input }}</b></div>
+        <ul id="search-result">
+            <li class="search-result-item" data-ng-repeat="result in results.items track by $index">
+                <span class="search-result-link"><a href="/stats/{{ result.full_name }}">{{ result.full_name }}</a></span>
+                <span class="search-result-name">{{ result.name }}</span><br/>
+                <span class="search-result-description">{{ result.description }}</span><br data-ng-if="result.description"/>
+                <span class="search-result-github-link"><a href="{{ result.html_url }}">view on GitHub</a></span>
+            </li>
+        </ul>
+    </form>
+}

@@ -1,6 +1,11 @@
 function SearchController($scope, $http) {
     $scope.results = [];
-    $scope.search_input = "";
+
+    $scope.init = function(initial_search) {
+        $scope.text = initial_search
+        $scope.submit()
+    }
+
     $scope.submit = function() {
         $scope.results = [];
         $scope.search_input = $scope.text;
