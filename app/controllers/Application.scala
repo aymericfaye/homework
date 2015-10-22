@@ -7,9 +7,13 @@ import play.api.mvc._
 
 class Application @Inject()(ws: WSClient) extends Controller {
 
-  implicit val context = play.api.libs.concurrent.Execution.Implicits.defaultContext
+  val title = "Zengularity Homework"
 
   def index = Action {
-    Ok(views.html.index("Zengularity Homework"))
+    Ok(views.html.index(title))
+  }
+
+  def stats(repo: String) = Action { // FIXME: Create the 'stats' page.
+    Ok(views.html.index(title))
   }
 }

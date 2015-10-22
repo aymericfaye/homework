@@ -5,11 +5,20 @@
 # Home page
 GET     /                           controllers.Application.index
 
+# Display project information
+GET     /stats/*repo                controllers.Application.stats(repo)
+
 # Search for a project
 GET     /search/*input              controllers.SearchController.perform(input)
 
-# Display project informations
-GET     /projectstats/*full_name    controllers.ProjectStatsController.perform(full_name)
+# Return the API definition
+GET     /api                        controllers.MainController.definition
+
+# Return the users list and their impact on the project
+GET     /api/users/*repo            controllers.MainController.users(repo, range: Int ?= 100)
+
+# Return commits projection on a timeline
+GET     /api/commits/*repo          controllers.MainController.commits(repo, range: Int ?= 100)
 
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
