@@ -5,7 +5,7 @@
 # Home page
 GET     /                           controllers.Application.index(search ?= "")
 
-# Display project information
+# Display project statistics
 GET     /stats/*repo                controllers.Application.stats(repo)
 
 # Search for a project

@@ -13,7 +13,7 @@ class Application @Inject()(ws: WSClient) extends Controller {
     Ok(views.html.index(title, search))
   }
 
-  def stats(repo: String) = Action { // FIXME: Create the 'stats' page.
-    Ok(views.html.stats(title))
+  def stats(repo: String) = Action {
+    Ok(views.html.stats(title, repo))
   }
 }
