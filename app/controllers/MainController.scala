@@ -51,7 +51,15 @@ class MainController @Inject()(ws: WSClient) extends Controller {
     ws.url(s"$api/repos/$repo/commits?page=1&per_page=$range").get() map {
       response =>
         if (response.status == 200) {
-          Ok(Json.toJson(response.json \\ "commit" ))
+          // Get the activity by day as JSON objects, with date and commits.
+          val timeline = (response.json \\ "commit" ) groupBy {
+            x => (x \ "author" \ "date").as[String].take(10)
+          } map {
+            x => Json.obj("date" -> x._1, "commits" -> x._2.size)
+          }
+
+          // Sort timeline by ascending date order.
+          Ok(Json.toJson(timeline.toList sortBy { x => (x \ "date").as[String] }))
         } else
           BadRequest(error(s"Repository '$repo' does not exists."))
     }
