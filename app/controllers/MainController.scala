@@ -26,7 +26,9 @@ class MainController @Inject()(ws: WSClient) extends Controller {
         if (contributorsResponse.status == 200) {
           // Get the commit ratio by contributors in a map.
           val impacts = commitsResponse.json.as[List[JsObject]] groupBy {
-            x => (x \ "committer" \ "id").as[Int]
+            x =>
+              val committer = x \ "committer"
+              if (committer.get == JsNull) 0 else (committer \ "id").as[Int]
           } mapValues {
             x => x.size * 100 / commitsResponse.json.as[List[JsObject]].size
           }
