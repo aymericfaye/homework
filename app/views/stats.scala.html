@@ -1,0 +1,25 @@
+@(title: String, request: String)
+
+@layout(title) {
+    <form id="search-container" action="/">
+        <input id="search" name="search"/>
+        <input id="submit" type="submit" value="Search"/>
+    </form>
+    <br/>
+    <div id="stats-container" data-ng-controller="StatsController" data-ng-init="get_stats('@request')">
+        <h1 class="stats-h1">Users</h1>
+        <ul id="stats-users">
+            <li class="search-users-item" data-ng-repeat="user in stats.users track by $index">
+                <span class="search-user-login">{{ user.login }} </span>
+                <span class="search-user-impact"><b>{{ user.impact }}%</b></span>
+            </li>
+        </ul>
+        <h1 class="stats-h1">Timeline</h1>
+        <ul id="stats-timeline">
+            <li class="search-timeline-item" data-ng-repeat="day in stats.timeline track by $index">
+                <span class="search-timeline-date">{{ day.date }} </span>
+                <span class="search-timeline-commits">{{ day.commits }} commits</span>
+            </li>
+        </ul>
+    </div>
+}
