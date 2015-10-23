@@ -57,13 +57,13 @@
 
 .search-result-link {
     font-family: arial, sans-serif;
-    font-size: 110%;
+    font-size: 120%;
     line-height: 180%;
 }
 
 .search-result-name {
     font-family: arial, sans-serif;
-    font-size: 110%;
+    font-size: 120%;
     line-height: 180%;
     color: #999;
 }
@@ -77,4 +77,61 @@
     font-family: arial, sans-serif;
     font-size: 90%;
     line-height: 180%;
+}
+
+
+#stats-container {
+    margin-left: 160px;
+    margin-top: 15px;
+}
+
+.stats-h1 {
+    margin-top: 15px;
+    font-family: arial, sans-serif;
+    font-size: 120%;
+    line-height: 180%;
+}
+
+#stats-users {
+    margin: 0px;
+    padding: 0px;
+}
+
+.search-users-item {
+    list-style-type: none;
+    margin-top: 20px;
+    padding-left: 40px;
+}
+
+.search-user-login {
+    font-family: arial, sans-serif;
+    font-size: 120%;
+}
+
+.search-user-impact {
+    font-family: arial, sans-serif;
+    font-size: 100%;
+    color: #999;
+}
+
+#stats-timeline {
+    margin: 0px;
+    padding: 0px;
+}
+
+.search-timeline-item {
+    list-style-type: none;
+    margin-top: 20px;
+    padding-left: 40px;
+}
+
+.search-timeline-date {
+    font-family: arial, sans-serif;
+    font-size: 110%;
+}
+
+.search-timeline-commits {
+    font-family: arial, sans-serif;
+    font-size: 110%;
+    color: #999;
 }
