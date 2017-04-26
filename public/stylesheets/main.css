@@ -1,0 +1,137 @@
+
+#search-container {
+    margin-left: 150px;
+    margin-top: 30px;
+}
+
+#search {
+    float: left;
+    width: 360px;
+    height: 27px;
+    line-height: 27px;
+    text-indent: 10px;
+    font-family: arial, sans-serif;
+    font-size: 110%;
+    color: #333;
+    background: #fff;
+    border: solid 1px #d9d9d9;
+}
+
+#submit {
+    cursor: pointer;
+    width: 35px;
+    height: 31px;
+    line-height: 0;
+    font-size: 0;
+    color: transparent;
+    background: url(/assets/images/search.png) no-repeat center #4d90fe ;
+    background-size: 23px;
+    border: 1px solid #3079ED;
+    border-radius: 2px;
+}
+
+#submit:hover {
+    background: url(/assets/images/search.png) no-repeat center #357AE8;
+    background-size: 23px;
+    border: 1px solid #2F5BB7;
+}
+
+#search-description {
+    margin-top: 25px;
+    margin-left: 10px;
+    font-family: arial, sans-serif;
+    font-size: 110%;
+    color: #999;
+}
+
+#search-result {
+    margin: 0px;
+    padding: 0px;
+}
+
+.search-result-item {
+    list-style-type: none;
+    margin-top: 20px;
+    padding-left: 10px;
+}
+
+.search-result-link {
+    font-family: arial, sans-serif;
+    font-size: 120%;
+    line-height: 180%;
+}
+
+.search-result-name {
+    font-family: arial, sans-serif;
+    font-size: 120%;
+    line-height: 180%;
+    color: #999;
+}
+
+.search-result-description {
+    font-family: arial, sans-serif;
+    font-size: 100%;
+}
+
+.search-result-github-link {
+    font-family: arial, sans-serif;
+    font-size: 90%;
+    line-height: 180%;
+}
+
+
+#stats-container {
+    margin-left: 160px;
+    margin-top: 15px;
+}
+
+.stats-h1 {
+    margin-top: 15px;
+    font-family: arial, sans-serif;
+    font-size: 120%;
+    line-height: 180%;
+}
+
+#stats-users {
+    margin: 0px;
+    padding: 0px;
+}
+
+.search-users-item {
+    list-style-type: none;
+    margin-top: 20px;
+    padding-left: 40px;
+}
+
+.search-user-login {
+    font-family: arial, sans-serif;
+    font-size: 120%;
+}
+
+.search-user-impact {
+    font-family: arial, sans-serif;
+    font-size: 100%;
+    color: #999;
+}
+
+#stats-timeline {
+    margin: 0px;
+    padding: 0px;
+}
+
+.search-timeline-item {
+    list-style-type: none;
+    margin-top: 20px;
+    padding-left: 40px;
+}
+
+.search-timeline-date {
+    font-family: arial, sans-serif;
+    font-size: 110%;
+}
+
+.search-timeline-commits {
+    font-family: arial, sans-serif;
+    font-size: 110%;
+    color: #999;
+}
